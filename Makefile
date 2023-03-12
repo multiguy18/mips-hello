@@ -3,7 +3,8 @@ CCFLAGS=-nostdlib -static
 
 AS=mips-linux-gnu-as
 
-OBJS= extern_asm.o\
+OBJS= minclib.o\
+	system_asm.o\
 	ctest.o\
 	hello_asm.o
 

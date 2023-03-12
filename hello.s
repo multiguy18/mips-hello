@@ -5,8 +5,20 @@
 .global __start
 
 __start:
+    li $v0, 4004
+    li $a0, 1
+    la $a1, testmsg
+    li $a2, 41
+    syscall
+
     jal testfun
     nop
+
+    li $v0, 4004
+    li $a0, 1
+    la $a1, newline
+    li $a2, 1
+    syscall
 
     la $a0, mynumber
     jal atoi
@@ -22,6 +34,12 @@ __start:
     li $a0, 1
     la $a1, mybuf
     li $a2, 11
+    syscall
+
+    li $v0, 4004
+    li $a0, 1
+    la $a1, newline
+    li $a2, 1
     syscall
 
     li $v0, 4004
@@ -55,9 +73,11 @@ __start:
 
 .section .data
 
-msg: .asciz "Hello World!\n"
-prompt: .asciz "Please enter your name: "
-response: .asciz "\nYour name is: "
+
+testmsg: .asciiz "Testing assembler calls to c and back...\n"
+newline: .asciiz "\n"
+prompt: .asciiz "Please enter your name: "
+response: .asciiz "\nYour name is: "
 mynumber: .asciiz "933"
 mybuf: .space 12
 input: .space 81
