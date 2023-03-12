@@ -13,6 +13,12 @@ OUTNAME=$(OUTDIR)/hello
 
 all: $(OUTNAME)
 
+clean:
+	rm -f $(OUTNAME)
+	rm -f *.o
+
+.PHONY:	all clean
+
 $(OUTNAME):	$(OBJS) | $(shell mkdir -p $(OUTDIR))
 	$(CC) $(OBJS) -o $(OUTNAME) $(CCFLAGS)
 
