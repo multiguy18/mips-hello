@@ -1,5 +1,5 @@
 CC=mips-linux-gnu-gcc
-CFLAGS=-nostdlib -static
+CFLAGS=-Wall -nostdlib -fno-builtin -static 
 AS=mips-linux-gnu-as
 
 
