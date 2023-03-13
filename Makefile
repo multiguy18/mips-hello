@@ -1,7 +1,7 @@
 CC=mips-linux-gnu-gcc
-CCFLAGS=-nostdlib -static
-
+CFLAGS=-nostdlib -static
 AS=mips-linux-gnu-as
+
 
 OBJS= minclib.o\
 	system_asm.o\
@@ -20,10 +20,10 @@ clean:
 .PHONY:	all clean
 
 $(OUTNAME):	$(OBJS) | $(shell mkdir -p $(OUTDIR))
-	$(CC) $(OBJS) -o $(OUTNAME) $(CCFLAGS)
+	$(CC) $(OBJS) -o $(OUTNAME) $(CFLAGS)
 
 %_asm.o:	%.s
 	$(AS) $< -o $@
 
 %.o:	%.c
-	$(CC) $< -o $@ $(CCFLAGS) -g -r -mno-abicalls -O2
+	$(CC) $< -o $@ $(CFLAGS) -g -r -mno-abicalls -O2
