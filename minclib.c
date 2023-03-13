@@ -36,13 +36,17 @@ int atoi(char *chars) {
         }
     }
 
+    if (sign) {
+        retval *= -1;
+    }
+
     return retval;
 }
 
 void itoa(int value, char *chars) {
-    int i;
+    int i = 0;
     int ihalf;
-    int j;
+    int j = 0;
     bool sign = FALSE;
     char lowest = '0';
 
