@@ -1,6 +1,6 @@
 #include "minclib.h"
 
-int __attribute__((used)) atoi(char *chars) {
+int atoi(char *chars) {
     int retval = 0;
     int i = -1;
     bool firstparse = TRUE;
@@ -39,7 +39,7 @@ int __attribute__((used)) atoi(char *chars) {
     return retval;
 }
 
-void __attribute__((used)) itoa(int value, char *chars) {
+void itoa(int value, char *chars) {
     int i;
     int ihalf;
     int j;
